@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animasi Kado</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+            font-family: Arial, sans-serif;
+        }
+
+        .kado {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            background-color: #ff6b6b;
+            border-radius: 10px;
+            animation: bounce 2s infinite;
+        }
+
+        /* Tutup Kado */
+        .kado::before {
+            content: '';
+            position: absolute;
+            width: 150px;
+            height: 30px;
+            background-color: #ffe066;
+            top: -30px;
+            left: 0;
+            border-radius: 10px 10px 0 0;
+            animation: bukaTutup 2s infinite;
+        }
+
+        /* Pita Horizontal */
+        .pita-hor {
+            position: absolute;
+            width: 20px;
+            height: 150px;
+            background-color: #ffffff;
+            left: 65px;
+            top: 0;
+        }
+
+        /* Pita Vertikal */
+        .pita-ver {
+            position: absolute;
+            width: 150px;
+            height: 20px;
+            background-color: #ffffff;
+            top: 65px;
+            left: 0;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes bukaTutup {
+            0%, 100% {
+                transform: rotate(0);
+            }
+            50% {
+                transform: rotate(-10deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="kado">
+        <div class="pita-hor"></div>
+        <div class="pita-ver"></div>
+    </div>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animasi Ulang Tahun</title>
+  <style>
+    body {
+      background-color: #ffebcd;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      flex-direction: column;
+    }
+
+    h1 {
+      color: #f77f00;
+      font-size: 3em;
+      text-align: center;
+      margin-bottom: 50px;
+      font-family: 'Arial', sans-serif;
+    }
+
+    /* Animasi balon */
+    .balloon {
+      width: 60px;
+      height: 80px;
+      background-color: #f77f00;
+      border-radius: 50%;
+      position: absolute;
+      bottom: -100px;
+      animation: rise 5s ease-in-out infinite;
+    }
+
+    .balloon:nth-child(1) {
+      left: 20%;
+      animation-duration: 4s;
+    }
+
+    .balloon:nth-child(2) {
+      left: 50%;
+      animation-duration: 5s;
+    }
+
+    .balloon:nth-child(3) {
+      left: 80%;
+      animation-duration: 6s;
+    }
+
+    .string {
+      width: 5px;
+      height: 150px;
+      background-color: #000;
+      position: absolute;
+      top: 80px;
+      left: 50%;
+      margin-left: -2px;
+    }
+
+    /* Animasi kue */
+    .cake {
+      width: 200px;
+      height: 150px;
+      background-color: #ff6347;
+      border-radius: 10px;
+      position: absolute;
+      bottom: 0;
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .cake::before {
+      content: "";
+      width: 80%;
+      height: 20px;
+      background-color: #ff4500;
+      position: absolute;
+      top: 30px;
+      left: 10%;
+      border-radius: 50%;
+    }
+
+    .candle {
+      width: 10px;
+      height: 50px;
+      background-color: #ffd700;
+      position: absolute;
+      top: -50px;
+      left: 90px;
+      border-radius: 5px;
+      animation: candle 1s infinite;
+    }
+
+    .flame {
+      width: 20px;
+      height: 20px;
+      background-color: yellow;
+      border-radius: 50%;
+      position: absolute;
+      top: -10px;
+      left: -5px;
+      animation: flame 1s infinite;
+    }
+
+    @keyframes rise {
+      0% {
+        bottom: -100px;
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        bottom: 100%;
+        opacity: 0;
+      }
+    }
+
+    @keyframes candle {
+      0% {
+        transform: rotate(0deg);
+      }
+      50% {
+        transform: rotate(10deg);
+      }
+      100% {
+        transform: rotate(0deg);
+      }
+    }
+
+    @keyframes flame {
+      0% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      50% {
+        transform: scale(1.2);
+        opacity: 0.7;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Selamat Ulang Tahun!</h1>
+  <!-- Balon -->
+  <div class="balloon">
+    <div class="string"></div>
+  </div>
+  <div class="balloon">
+    <div class="string"></div>
+  </div>
+  <div class="balloon">
+    <div class="string"></div>
+  </div>
+
+  <!-- Kue Ulang Tahun -->
+  <div class="cake">
+    <div class="candle">
+      <div class="flame"></div>
+    </div>
+    <div class="candle" style="left: 130px;">
+      <div class="flame"></div>
+    </div>
+  </div>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animasi Kado</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Menghubungkan CSS -->
+</head>
+<body>
+    <div class="kado">
+        <div class="pita-hor"></div>
+        <div class="pita-ver"></div>
+    </div>
+</body>
+</html>
